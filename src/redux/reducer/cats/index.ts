@@ -22,7 +22,7 @@ const catsReducer = (state: cat_state_type = catsState, action: any) => {
     if(action.type === SUCCESS_GET_CATS) {
         stateCopy.isRequested = false;
         stateCopy.error = null;
-        stateCopy.data = stateCopy.data.concat(action.payload);
+        stateCopy.data = action.payload;
     }
 
     if(action.type === HANDLE_LOAD_MORE) {

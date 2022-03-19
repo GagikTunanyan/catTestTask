@@ -35,8 +35,8 @@ const successGetCats = (data: cat_data_type) => {
 
 export const getCats = (page:number, category: number | null) => {
     const url = category !== null 
-        ? `https://api.thecatapi.com/v1/images/search?limit=10&page=${page}&category_ids=${category}`
-        : `https://api.thecatapi.com/v1/images/search?limit=10&page=${page}`
+        ? `https://api.thecatapi.com/v1/images/search?limit=${10 * page}&&category_ids=${category}`
+        : `https://api.thecatapi.com/v1/images/search?limit=${10 * page}`
     return (dispatch: Dispatch<ActionType>) => {
         dispatch(startGetCats());
         axios.get(url)
